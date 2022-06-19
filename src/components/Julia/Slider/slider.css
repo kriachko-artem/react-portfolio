@@ -1,0 +1,66 @@
+.slick-slider{
+    overflow: hidden;
+}
+.slick-list{
+    overflow: visible;
+}
+.slick-track{
+    display: flex;
+}
+.slick-slider{
+    position: relative;
+}
+.slick-slider .slider-item{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.5s;
+    overflow: visible;
+    width: 95% !important;
+}
+.slick-dots{
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.slick-dots button{
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #454545;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+}
+.slick-dots li.slick-active button{
+    background-color: transparent;
+    border: 1px solid #000;
+}
+
+/*Custom*/
+
+
+
+
+.slider-item .image-holder{
+    overflow: hidden;
+}
+.slider-item img{
+    width: 100%;
+    transition: 0.5s;
+}
+.slider-item a:hover img{
+     transform: scale(1.1);
+ }
+.slider-item text{
+    border-top: 20px;
+    line-height: 140%;
+}
+.slider-item__tittle{
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}

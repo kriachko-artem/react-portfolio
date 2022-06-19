@@ -1,0 +1,19 @@
+@media screen and (max-width: 1024px){
+    .poster{
+        padding: 0 20px;
+    }
+    .poster .poster_main__label{
+        font-size: 10vw;
+    }
+    .poster__author-info{
+        font-size: 15px;
+    }
+    
+}
+@media screen and (max-width: 768px){
+    .poster__author-info {
+        text-align: center;
+        align-self: center;
+        margin-right: 0;
+    }
+}

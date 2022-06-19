@@ -1,0 +1,116 @@
+section.cards{
+    align-self: flex-end;
+}
+section.cards .container{
+    max-width: unset;
+    padding: 0 5%;
+}
+section.cards .container hr{
+    margin-bottom: 45px;
+}
+.cards_content__tittle{
+    width: 40%;
+    font-weight: 600;
+    font-size: 40px;
+}
+.cards_content{
+    display: flex;
+}
+.cards_content__main{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+.cards_content__main h4{
+    width: 50%;
+    font-size: 30px;
+    margin-bottom: 100px;
+}
+.cards_content__main__cards{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.card .card_img-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+.card .card_img-holder .card-3d{
+    width: 100%;
+    position: relative;
+    transform-origin: center center -80px;
+    transform-style: preserve-3d;
+}
+.card .card_img-holder span{
+    background-color: #ebedec;
+    display: block;
+    position: absolute;
+    pointer-events: none;
+}
+.left{
+    width: 30px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform-origin: left center;
+    transform: rotateY(90deg);
+}
+.right{
+    top: 0;
+    width: 30px;
+    height: 100%;
+    right: 0;
+    transform-origin: right center;
+    transform: rotateY(-90deg);
+}
+.top{
+    top: 0;
+    height: 30px;
+    width: 100%;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+}
+.bottom{
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    transform-origin: bottom center;
+    transform: rotateX(90deg);
+}
+.back{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform-origin: center center;
+    transform: rotateX(-180deg) translateZ(30px);
+    -webkit-box-shadow: 0 0 44px 19px rgba(0, 0, 0, 0.50);
+    -moz-box-shadow: 0 0 44px 19px rgba(0, 0, 0, 0.50);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.50);
+}
+
+.card .card_img-holder:hover:before{
+    opacity: 1;
+}
+.card .card_img-holder img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.card_name{
+    margin: 40px 0 15px;
+    font-weight: 600;
+}
+.card p{
+    line-height: 140%;
+}

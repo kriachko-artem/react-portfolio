@@ -1,0 +1,36 @@
+
+section.julia{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+.julia__title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 40px;
+    width: 35%;
+}
+.julia__title .project-name img{
+    width: 100%;
+}
+.julia__title h3{
+    font-weight: 600;
+}
+.julia__title .description{
+    line-height: 140%;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+.julia .container{
+    flex-direction: row;
+    align-items: flex-start;
+    align-self: flex-end;
+    max-width: unset;
+    padding-left: 5%;
+}
+.julia .julia_slider{
+    width: 100%;
+    overflow: hidden;
+}
