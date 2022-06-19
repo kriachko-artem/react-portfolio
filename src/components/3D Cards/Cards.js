@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import './cards.css'
 import firstCardImg from './images/first.png'
 import secondCardImg from './images/second.png'
@@ -9,16 +9,27 @@ import {card3D} from "../../animations/animations";
 
 
 export function Cards () {
-    let isMobile = false;
+
+    const [isMobile,setIsMobile] = useState(false);
     if (typeof DeviceOrientationEvent.requestPermission === 'function'){
-        alert(isMobile)
-        isMobile = true;
+        setIsMobile(true)
+    }
+
+    function getAccess(){
+        DeviceOrientationEvent.requestPermission()
+            .then(()=> {
+                card3D('.card_img-holder', isMobile)
+            }).catch(()=>{
+                setIsMobile(false)
+        })
     }
     useEffect(()=>{
 
-
         setBigCursor('.card_img-holder img')
-        card3D('.card_img-holder',isMobile)
+        if (!isMobile) {
+            card3D('.card_img-holder', isMobile)
+        }
+
     },[])
 
   return (
@@ -30,7 +41,7 @@ export function Cards () {
                   <div className="cards_content__main">
                       {isMobile? (
                           <>
-                          <button id={'get-access'}>
+                          <button onClick={getAccess} id={'get-access'}>
                               Start 3D
                           </button>
                           </>

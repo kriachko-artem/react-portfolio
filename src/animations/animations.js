@@ -168,9 +168,14 @@ export function card3D(elements,isMobile){
                         duration: 0.2,
                 });
             }
-            item.addEventListener('mouseenter',()=>{
-                item.childNodes[0].addEventListener('mousemove',setTransform)
-            });
+            if (!isMobile){
+                item.addEventListener('mouseenter',()=>{
+                    item.childNodes[0].addEventListener('mousemove',setTransform)
+                });
+            } else {
+                window.addEventListener('deviceorientation',setTransform)
+            }
+
 
             item.addEventListener('mouseleave',()=>{
                 item.childNodes[0].removeEventListener('mousemove',setTransform)
