@@ -10,13 +10,11 @@ import {card3D} from "../../animations/animations";
 
 export function Cards () {
     let isMobile = false;
-
+    if (typeof DeviceOrientationEvent.requestPermission === 'function'){
+        alert(isMobile)
+        isMobile = true;
+    }
     useEffect(()=>{
-        setTimeout(()=>{
-            if (typeof DeviceOrientationEvent.requestPermission === 'function'){
-                isMobile = true;
-            }
-        },500)
 
 
         setBigCursor('.card_img-holder img')
