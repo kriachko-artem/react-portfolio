@@ -7,14 +7,17 @@ import {setBigCursor} from "../../animations/animations";
 import {card3D} from "../../animations/animations";
 
 
+
 export function Cards () {
     let isMobile = false;
 
     useEffect(()=>{
+        setTimeout(()=>{
+            if (typeof DeviceOrientationEvent.requestPermission === 'function'){
+                isMobile = true;
+            }
+        },500)
 
-        if (typeof DeviceOrientationEvent.requestPermission === 'function'){
-            isMobile = true;
-        }
 
         setBigCursor('.card_img-holder img')
         card3D('.card_img-holder',isMobile)
