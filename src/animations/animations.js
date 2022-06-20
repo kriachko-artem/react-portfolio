@@ -155,7 +155,6 @@ export function card3D(elements){
                 yPositionFromCenter = event.offsetY - item.childNodes[0].offsetHeight/2;
                 transformX = xPositionFromCenter/8;
                 transformY = -yPositionFromCenter/12;
-
                 gsap.to(item.childNodes[0],{
                         transform: `rotateY(${transformX}deg) rotateX(${transformY}deg)`,
                         duration: 0.2,
