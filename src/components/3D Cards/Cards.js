@@ -26,7 +26,7 @@ export function Cards () {
     useEffect(()=>{
 
         setBigCursor('.card_img-holder img')
-        if (!isMobile) {
+        if (isMobile === false) {
             card3D('.card_img-holder', isMobile)
         }
 
@@ -50,21 +50,6 @@ export function Cards () {
                           <div className="card">
                               <div className="card_img-holder">
                                   <div className="card-3d">
-                                      <img src={firstCardImg} alt="Plan your trip"/>
-                                      <span className={'left'}/>
-                                      <span className={'right'}/>
-                                      <span className={'top'}/>
-                                      <span className={'bottom'}/>
-                                      <span className={'back'}/>
-                                  </div>
-                              </div>
-                              <h5 className="card_name">
-                                 Card one
-                              </h5>
-                          </div>
-                          <div className="card">
-                              <div className="card_img-holder">
-                                  <div className="card-3d">
                                       <img src={secondCardImg} alt="Plan your trip"/>
                                       <span className={'left'}/>
                                       <span className={'right'}/>
@@ -74,22 +59,7 @@ export function Cards () {
                                   </div>
                               </div>
                               <h5 className="card_name">
-                                  Card two
-                              </h5>
-                          </div>
-                          <div className="card">
-                              <div className="card_img-holder">
-                                  <div className="card-3d">
-                                      <img src={thirdCardImg} alt="Plan your trip"/>
-                                      <span className={'left'}/>
-                                      <span className={'right'}/>
-                                      <span className={'top'}/>
-                                      <span className={'bottom'}/>
-                                      <span className={'back'}/>
-                                  </div>
-                              </div>
-                              <h5 className="card_name">
-                                  Card three
+                                  Card name
                               </h5>
                           </div>
                       </div>

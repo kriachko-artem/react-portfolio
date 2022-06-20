@@ -168,12 +168,12 @@ export function card3D(elements,isMobile){
                         duration: 0.2,
                 });
             }
-            if (!isMobile){
+            if (isMobile === false){
                 item.addEventListener('mouseenter',()=>{
                     item.childNodes[0].addEventListener('mousemove',setTransform)
                 });
             } else {
-                window.addEventListener('deviceorientation',setTransform)
+                alert('good')
             }
 
 
