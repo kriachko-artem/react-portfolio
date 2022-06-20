@@ -143,8 +143,27 @@ export function setBigCursor(elements){
         )
     })
 }
-
-export function card3D(elements){
+export function deviceOrientation3D(element){
+    const initialOffset = {
+        x: null,
+        y: null,
+    };
+    window.addEventListener('deviceorientation',(event)=>{
+        if (initialOffset.x === null){
+            initialOffset.x = event.gamma;
+            initialOffset.y = event.beta;
+        }
+        if ((event.beta > 0 && event.beta < 80)){
+            let transformX = initialOffset.x - event.gamma,
+                transformY = initialOffset.y - event.beta;
+            gsap.to(element,{
+                transform: `rotateY(${transformX}deg) rotateX(${transformY}deg)`,
+                duration: 1,
+            });
+        }
+    })
+}
+export function mouseMoveCard3D(elements){
     const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
     if (!devices.test(navigator.userAgent)){
         let xPositionFromCenter,yPositionFromCenter,transformX,transformY;

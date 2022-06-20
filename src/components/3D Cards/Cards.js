@@ -3,13 +3,14 @@ import './cards.css'
 import firstCardImg from './images/first.png'
 import secondCardImg from './images/second.png'
 import thirdCardImg from './images/third.png'
-import {setBigCursor} from "../../animations/animations";
-import {card3D} from "../../animations/animations";
+import {deviceOrientation3D, setBigCursor} from "../../animations/animations";
+import {mouseMoveCard3D} from "../../animations/animations";
 
 function getAccess(){
     DeviceOrientationEvent.requestPermission()
         .then(() =>{
             alert('good')
+            deviceOrientation3D('.card_img-holder')
         }).catch(permission =>{
         console.log(permission)
     })
@@ -20,7 +21,7 @@ export function Cards () {
 
 
         setBigCursor('.card_img-holder img')
-        card3D('.card_img-holder')
+        mouseMoveCard3D('.card_img-holder')
     },[])
 
   return (
