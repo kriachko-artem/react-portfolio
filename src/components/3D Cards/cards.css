@@ -75,7 +75,7 @@ section.cards .container hr{
     pointer-events: none;
 }
 .left{
-    width: 30px;
+    width: 100px;
     height: 100%;
     left: 0;
     top: 0;
@@ -84,7 +84,7 @@ section.cards .container hr{
 }
 .right{
     top: 0;
-    width: 30px;
+    width: 100px;
     height: 100%;
     right: 0;
     transform-origin: right center;
@@ -92,14 +92,14 @@ section.cards .container hr{
 }
 .top{
     top: 0;
-    height: 30px;
+    height: 100px;
     width: 100%;
     transform-origin: top center;
     transform: rotateX(-90deg);
 }
 .bottom{
     bottom: 0;
-    height: 30px;
+    height: 100px;
     width: 100%;
     transform-origin: bottom center;
     transform: rotateX(90deg);
@@ -109,7 +109,7 @@ section.cards .container hr{
     height: 100%;
     top: 0;
     transform-origin: center center;
-    transform: rotateX(-180deg) translateZ(30px);
+    transform: rotateX(-180deg) translateZ(100px);
     -webkit-box-shadow: 0 0 44px 19px rgba(0, 0, 0, 0.50);
     -moz-box-shadow: 0 0 44px 19px rgba(0, 0, 0, 0.50);
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.50);

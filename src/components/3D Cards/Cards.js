@@ -15,6 +15,7 @@ function getAccess(){
             alert('good')
             deviceOrientation3D('.card_img-holder')
         }).catch(permission =>{
+        deviceOrientation3D('.card_img-holder')
         console.log(permission)
     })
 }
