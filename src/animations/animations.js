@@ -144,38 +144,26 @@ export function setBigCursor(elements){
     })
 }
 
-export function card3D(elements,isMobile){
+export function card3D(elements){
     const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
     if (!devices.test(navigator.userAgent)){
         let xPositionFromCenter,yPositionFromCenter,transformX,transformY;
         const cards = document.querySelectorAll(elements);
         cards.forEach(item=>{
-
             function setTransform(event){
-                if (!isMobile){
-                    xPositionFromCenter = event.offsetX - item.childNodes[0].offsetWidth/2;
-                    yPositionFromCenter = event.offsetY - item.childNodes[0].offsetHeight/2;
-                    transformX = xPositionFromCenter/8;
-                    transformY = -yPositionFromCenter/12;
-                } else {
-                    transformX = event.alpha;
-                    transformY = event.beta;
-                }
-
+                xPositionFromCenter = event.offsetX - item.childNodes[0].offsetWidth/2;
+                yPositionFromCenter = event.offsetY - item.childNodes[0].offsetHeight/2;
+                transformX = xPositionFromCenter/8;
+                transformY = -yPositionFromCenter/12;
 
                 gsap.to(item.childNodes[0],{
                         transform: `rotateY(${transformX}deg) rotateX(${transformY}deg)`,
                         duration: 0.2,
                 });
             }
-            if (isMobile === false){
-                item.addEventListener('mouseenter',()=>{
-                    item.childNodes[0].addEventListener('mousemove',setTransform)
-                });
-            } else {
-                alert('good')
-            }
-
+            item.addEventListener('mouseenter',()=>{
+                item.childNodes[0].addEventListener('mousemove',setTransform)
+            });
 
             item.addEventListener('mouseleave',()=>{
                 item.childNodes[0].removeEventListener('mousemove',setTransform)
