@@ -8,30 +8,49 @@ section.cards .container{
 section.cards .container hr{
     margin-bottom: 45px;
 }
-.cards_content__tittle{
-    width: 40%;
+.cards_content__tittle h2{
     font-weight: 600;
     font-size: 40px;
 }
 .cards_content{
     display: flex;
+    flex-direction: column;
 }
-.cards_content__main{
+.cards_content__description{
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
+    align-items: center;
+    padding-bottom: 40px;
+}
+.cards_content__description h4{
+    margin: 30px 0;
+    font-size: 25px;
+}
+.cards_content__description .description-rotate{
+    margin-bottom: 50px;
+}
+.cards_content__description .get-access{
+    padding: 15px 20px;
+    border-radius: 20px;
+    border: 2px solid #ea8823;
+    width: fit-content;
+    animation: Blink 1s infinite alternate;
+}
+@keyframes Blink {
+    from{background-color: white;}
+    to{background-color: #ea8823;}
 }
 .cards_content__main h4{
-    width: 50%;
+    line-height: 130%;
     font-size: 30px;
     margin-bottom: 100px;
 }
 .cards_content__main__cards{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .card{
-    width: 30%;
+    margin: 0 30px;
     display: flex;
     flex-direction: column;
 }
