@@ -12,7 +12,6 @@ const isMobile = devices.test(navigator.userAgent);
 function getAccess(){
     DeviceOrientationEvent.requestPermission()
         .then(() =>{
-            alert('good')
             deviceOrientation3D('.card_img-holder')
         }).catch(permission =>{
         deviceOrientation3D('.card_img-holder')
@@ -24,7 +23,6 @@ export function Cards () {
     useEffect(()=>{
         if (isMobile === false){
             setBigCursor('.card_img-holder img')
-            setBigCursor('.get-access')
             mouseMoveCard3D('.card_img-holder')
         }
 

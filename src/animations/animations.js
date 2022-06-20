@@ -157,7 +157,7 @@ export function deviceOrientation3D(element){
             let transformX = initialOffset.x - event.gamma,
                 transformY = initialOffset.y - event.beta;
             gsap.to(element,{
-                transform: `rotateY(${transformX}deg) rotateX(${transformY}deg)`,
+                transform: `rotateY(${transformX*2}deg) rotateX(${transformY*2}deg)`,
                 duration: 1,
             });
         }
