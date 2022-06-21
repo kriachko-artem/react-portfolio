@@ -81,6 +81,7 @@ section.cards .container hr{
     top: 0;
     transform-origin: left center;
     transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
 }
 .right{
     top: 0;
@@ -89,6 +90,7 @@ section.cards .container hr{
     right: 0;
     transform-origin: right center;
     transform: rotateY(-90deg);
+    -webkit-transform: rotateY(-90deg);
 }
 .top{
     top: 0;
@@ -96,6 +98,7 @@ section.cards .container hr{
     width: 100%;
     transform-origin: top center;
     transform: rotateX(-90deg);
+    -webkit-transform: rotateX(-90deg);
 }
 .bottom{
     bottom: 0;
@@ -103,6 +106,7 @@ section.cards .container hr{
     width: 100%;
     transform-origin: bottom center;
     transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
 }
 .back{
     width: 100%;
@@ -110,6 +114,7 @@ section.cards .container hr{
     top: 0;
     transform-origin: center center;
     transform: rotateX(-180deg) translateZ(100px);
+    -webkit-transform:translateZ(100px);
     -webkit-box-shadow: 0 0 44px 19px rgba(0, 0, 0, 0.50);
     -moz-box-shadow: 0 0 44px 19px rgba(0, 0, 0, 0.50);
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.50);
