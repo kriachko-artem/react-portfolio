@@ -68,12 +68,12 @@ section.cards .container hr{
 .card .card_img-holder .card-3d{
     width: 100%;
     position: relative;
-    transform-origin: center center -80px;
+    transform-origin: center center;
     transform-style: preserve-3d;
 }
 .card .card_img-holder span{
     background-color: #ebedec;
-    border: 1px solid black;
+    border: 1px solid #a4a4a4;
     display: block;
     position: absolute;
     pointer-events: none;
