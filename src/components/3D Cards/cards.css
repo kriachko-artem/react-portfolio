@@ -61,6 +61,9 @@ section.cards .container hr{
     text-align: center;
     width: 100%;
     height: auto;
+    position: relative;
+    transform-origin: center center -80px;
+    transform-style: preserve-3d;
 }
 .card .card_img-holder .card-3d{
     width: 100%;

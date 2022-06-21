@@ -50,13 +50,13 @@ export function Cards () {
                       {isMobile? (
                           <div className="card">
                               <div className="card_img-holder">
+                                  <span className={'left'}/>
+                                  <span className={'right'}/>
+                                  <span className={'top'}/>
+                                  <span className={'bottom'}/>
+                                  <span className={'back'}/>
                                   <div className="card-3d">
                                       <img src={firstCardImg} alt="Plan your trip"/>
-                                      <span className={'left'}/>
-                                      <span className={'right'}/>
-                                      <span className={'top'}/>
-                                      <span className={'bottom'}/>
-                                      <span className={'back'}/>
                                   </div>
                               </div>
                               <h5 className="card_name">
