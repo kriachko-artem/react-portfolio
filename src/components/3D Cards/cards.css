@@ -73,6 +73,7 @@ section.cards .container hr{
 }
 .card .card_img-holder span{
     background-color: #ebedec;
+    border: 1px solid black;
     display: block;
     position: absolute;
     pointer-events: none;
