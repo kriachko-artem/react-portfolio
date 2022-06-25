@@ -1,0 +1,22 @@
+.burger{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    justify-content: center;
+}
+.burger span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-text-color);
+    transform-origin: center;
+}
+
+.burger span.top{
+    top: 0;
+}
+.burger span.bottom{
+    bottom: 0;
+}

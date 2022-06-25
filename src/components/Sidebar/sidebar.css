@@ -1,0 +1,81 @@
+.sidebar__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+.sidebar{
+    transform: translateX(-100%);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 55%;
+    height: 100%;
+    padding: 192px 0 5% 12%;
+    background-color: #fff;
+    color: black!important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.sidebar hr{
+    transform-origin: left;
+    transform: scaleX(0);
+}
+.sidebar__list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%;
+}
+
+.sidebar__list .sidebar__list__list:hover li{
+    color: #c1c1c1;
+}
+.sidebar__list .sidebar__list__list li{
+    padding: 5px 0;
+    opacity: 0;
+    background-color: unset;
+}
+.sidebar__list .sidebar__list__list li:hover{
+    color: var(--main-text-color)
+}
+.sidebar__list .sidebar__list__list li:hover img{
+    opacity: 1;
+}
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar ul li{
+    line-height: 130%;
+}
+.sidebar .schedule{
+    width: 50%;
+    min-width: 250px;
+}
+.sidebar .schedule hr{
+    margin: 0;
+}
+.sidebar .schedule h6{
+    margin: 10px 0;
+    font-weight: 600;
+}
+.sidebar .schedule li{
+    line-height: 150%;
+    font-size: 13px;
+    margin-right: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar .schedule li span{
+    width: 50%;
+}
+
+
+

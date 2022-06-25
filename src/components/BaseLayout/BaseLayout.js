@@ -5,7 +5,7 @@ import {Julia} from "../Julia/Julia";
 import {Footer} from "../Footer/Footer";
 import {Cursor} from "../Cursor/Cursor";
 import {Cards} from "../3D Cards/Cards";
-import {Navbar} from "../Nav/Navbar";
+import {Navbar} from "../Navbar/Navbar";
 
 
 
