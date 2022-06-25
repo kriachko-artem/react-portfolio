@@ -157,6 +157,8 @@ export function deviceOrientation3D(element){
                 transform: `rotateY(${initialOffset.y/5}deg) rotateX(${initialOffset.x/5}deg)`,
                 duration: 1,
             });
+        }
+    })
 }
 export function mouseMoveCard3D(elements){
     const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
