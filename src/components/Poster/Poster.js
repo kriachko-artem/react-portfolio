@@ -52,13 +52,13 @@ export function Poster () {
         })
     }
     function parallaxElement(area,element,offset = 0){
-        startPosition = area.getBoundingClientRect().top/5+offset;
+        startPosition = area.getBoundingClientRect().top/5+offset+50;
         window.addEventListener('scroll', ()=>{
             const areaPosition = {
                 top: area.getBoundingClientRect().top,
                 bottom: area.getBoundingClientRect().bottom,
             };
-            startPosition = areaPosition.top/5+offset;
+            startPosition = areaPosition.top/5+offset+50;
             if ((areaPosition.top - window.innerHeight < 0)&&
                 (areaPosition.bottom > 0)){
                 gsap.to(element,{
