@@ -63,10 +63,6 @@ export function changeBackground(){
     window.addEventListener('scroll',setBgColor)
 
     function setBgColor(){
-        document.documentElement.style
-            .setProperty('--main-bg-color', '#ea8823');
-        document.documentElement.style
-            .setProperty('--main-text-color', 'black');
         if(
             (sections[sections.length-1].getBoundingClientRect().top - window.innerHeight/2 < 0)){
             document.documentElement.style
@@ -83,6 +79,10 @@ export function changeBackground(){
         } else if (
             (sections[0].getBoundingClientRect().top - window.innerHeight < 0)&&
             (sections[0].getBoundingClientRect().bottom-window.innerHeight/2 > 0)){
+            document.documentElement.style
+                .setProperty('--main-bg-color', '#ea8823');
+            document.documentElement.style
+                .setProperty('--main-text-color', 'black');
         }
     }
 }
