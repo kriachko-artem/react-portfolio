@@ -42,7 +42,10 @@ export function Cards () {
                                   <button onClick={getAccess} className={'get-access'}>Start 3D</button>
                               </>
                           ):(
+                              <>
                               <h4>You can move mouse on this cards to see the my custom 3D effect to card</h4>
+                              <h3>Open it on mobile to see rotation magic</h3>
+                              </>
                           )}
                       </div>
                   </div>

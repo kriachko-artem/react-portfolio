@@ -63,6 +63,11 @@ export function changeBackground(){
     window.addEventListener('scroll',setBgColor)
 
     function setBgColor(){
+        console.clear()
+        console.log('Top',sections[sections.length-1].getBoundingClientRect().top)
+        console.log('Top - Window/2',sections[sections.length-1].getBoundingClientRect().top - window.innerHeight/2)
+        console.log(window.innerHeight)
+        console.log('Bottom - window.innerHeight',sections[sections.length-1].getBoundingClientRect().bottom - window.innerHeight)
         if(
             (sections[sections.length-1].getBoundingClientRect().top - window.innerHeight/2 < 0)){
             document.documentElement.style
@@ -70,19 +75,17 @@ export function changeBackground(){
             document.documentElement.style
                 .setProperty('--main-text-color', 'white');
         } else if (
-            (sections[1].getBoundingClientRect().top - window.innerHeight < 0)&&
-            (sections[1].getBoundingClientRect().bottom > 0)){
-            document.documentElement.style
-                .setProperty('--main-bg-color', 'white');
-            document.documentElement.style
-                .setProperty('--main-text-color', 'black');
-        } else if (
             (sections[0].getBoundingClientRect().top - window.innerHeight < 0)&&
             (sections[0].getBoundingClientRect().bottom-window.innerHeight/2 > 0)){
             document.documentElement.style
                 .setProperty('--main-bg-color', '#ea8823');
             document.documentElement.style
                 .setProperty('--main-text-color', 'black');
+        } else {
+                document.documentElement.style
+                    .setProperty('--main-bg-color', 'white');
+                document.documentElement.style
+                    .setProperty('--main-text-color', 'black');
         }
     }
 }
