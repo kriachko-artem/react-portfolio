@@ -145,23 +145,18 @@ export function setBigCursor(elements){
 }
 export function deviceOrientation3D(element){
     const initialOffset = {
-        x: null,
-        y: null,
+        x: 0,
+        y: 0,
     };
-    window.addEventListener('deviceorientation',(event)=>{
-        if (initialOffset.x === null){
-            initialOffset.x = event.gamma;
-            initialOffset.y = event.beta;
-        }
-        if ((event.beta > 0 && event.beta < 80)){
-            let transformX = initialOffset.x - event.gamma,
-                transformY = initialOffset.y - event.beta;
+    window.addEventListener('devicemotion',({rotationRate: {alpha, beta, gamma}})=>{
+        initialOffset.x += Math.round(alpha/10);
+        initialOffset.y += Math.round(beta/10)
+        if ((initialOffset.x > -180 && initialOffset.x < 180)&&
+            (initialOffset.y > -90 && initialOffset.y < 90)){
             gsap.to(element,{
-                transform: `rotateY(${transformX*2}deg) rotateX(${transformY*2}deg)`,
+                transform: `rotateY(${initialOffset.y/5}deg) rotateX(${initialOffset.x/5}deg)`,
                 duration: 1,
             });
-        }
-    })
 }
 export function mouseMoveCard3D(elements){
     const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");

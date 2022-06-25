@@ -10,11 +10,11 @@ import {mouseMoveCard3D} from "../../animations/animations";
 const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
 const isMobile = devices.test(navigator.userAgent);
 function getAccess(){
-    DeviceOrientationEvent.requestPermission()
+    DeviceMotionEvent.requestPermission()
         .then(() =>{
             deviceOrientation3D('.card_img-holder')
         }).catch(permission =>{
-        deviceOrientation3D('.card_img-holder')
+        // deviceOrientation3D('.card_img-holder')
         console.log(permission)
     })
 }
