@@ -5,6 +5,7 @@ import {Julia} from "../Julia/Julia";
 import {Footer} from "../Footer/Footer";
 import {Cursor} from "../Cursor/Cursor";
 import {Cards} from "../3D Cards/Cards";
+import {Navbar} from "../Navbar/Navbar";
 
 
 
@@ -19,10 +20,10 @@ export function BaseLayout () {
 
   return (
       <div className='wrapper'>
+          <Navbar/>
           <Poster/>
           <Julia/>
           <Cards/>
-
           <Footer/>
           <Cursor/>
       </div>

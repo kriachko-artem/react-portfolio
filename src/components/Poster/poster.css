@@ -21,14 +21,6 @@
     display: flex;
     flex-direction: column;
 }
-.poster_title .logo{
-    align-self: flex-end;
-    width: 120px;
-    margin-bottom: 15px;
-}
-.poster_title .logo img{
-    width: 100%;
-}
 .poster_title hr{
     margin-top: 0;
 }

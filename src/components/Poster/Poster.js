@@ -6,7 +6,7 @@ import cloudThree from './images/cloud-3.png'
 import './poster.css'
 import './poster-media.css'
 import {gsap} from "gsap";
-import logo from './images/logo.png'
+import logo from '../Logo/logo.png'
 
 export function Poster () {
 
@@ -81,9 +81,6 @@ export function Poster () {
           <section className="poster">
               <div className="container">
               <div className="poster_title">
-                  <div className="logo">
-                      <img src={logo} alt="AK"/>
-                  </div>
                   <hr/>
                   <h3>{new Date().toLocaleDateString('en-EN',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</h3>
               </div>

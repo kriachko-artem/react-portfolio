@@ -3,12 +3,10 @@ import {Expo, Power3,Power2, Back} from "gsap/gsap-core";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 
-export function animateList(list,items){
-    gsap.fromTo(list,{opacity:1},{opacity:1,duration: 1})
+export function animateList(items){
     gsap.fromTo(items,{
             translateY: 20,
             opacity: 0,
-            backgroundColor: 'unset'
 
         },
         {
@@ -19,6 +17,47 @@ export function animateList(list,items){
         }
     )
 }
+export const burgerAnimation = {
+    open: ()=>{
+            gsap.to('.burger .side',{
+                top: '50%',
+                bottom: '50%',
+                duration: 0.2,
+                onComplete: ()=>{
+                    gsap.to('.burger .side',{
+                        opacity: 0,
+                        duration: 0
+                    });
+                    gsap.to('.burger .left',{
+                        rotate: -45
+                    })
+                    gsap.to('.burger .right',{
+                        rotate: 45
+                    })
+                }
+            })
+        },
+    close: ()=>{
+        gsap.to('.burger .cross',{
+            rotate: 0,
+            onComplete: ()=>{
+                gsap.to('.burger .side',{
+                    opacity: 1,
+                    duration: 0
+                })
+                gsap.to('.burger .top',{
+                    top: 0,
+                    duration: 0.2,
+                })
+                gsap.to('.burger .bottom',{
+                    top: 'unset',
+                    bottom: 0,
+                    duration: 0.2,
+                })
+            }
+        })
+    }
+};
 
 // export function changeBackground(){
 //
@@ -63,11 +102,6 @@ export function changeBackground(){
     window.addEventListener('scroll',setBgColor)
 
     function setBgColor(){
-        console.clear()
-        console.log('Top',sections[sections.length-1].getBoundingClientRect().top)
-        console.log('Top - Window/2',sections[sections.length-1].getBoundingClientRect().top - window.innerHeight/2)
-        console.log(window.innerHeight)
-        console.log('Bottom - window.innerHeight',sections[sections.length-1].getBoundingClientRect().bottom - window.innerHeight)
         if(
             (sections[sections.length-1].getBoundingClientRect().top - window.innerHeight/2 < 0)){
             document.documentElement.style
