@@ -6,7 +6,6 @@ import cloudThree from './images/cloud-3.png'
 import './poster.css'
 import './poster-media.css'
 import {gsap} from "gsap";
-import logo from '../Logo/logo.png'
 
 export function Poster () {
 
@@ -16,9 +15,7 @@ export function Poster () {
     useEffect(()=>{
         let posterMainTitle = document.querySelector('.poster_main__label'),
             posterMain = document.querySelector('.poster_main'),
-            posterMainImage = document.querySelector('.poster_main .img-holder'),
-            posterTitle = document.querySelector('.poster_title'),
-            startPosition;
+            posterMainImage = document.querySelector('.poster_main .img-holder');
 
 
         parallaxElement(posterMainImage,posterMainTitle,-50)
