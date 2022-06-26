@@ -10,8 +10,9 @@
     position: absolute;
     top: 0;
     width: 100%;
-    transform: translateY(100%);
+    transform: translateY(-100%);
     background-color: #fff;
+    color: black;
     height: 60%;
     padding: 20px;
 }

@@ -22,7 +22,7 @@ export function Menu ({setIsMenuOpened}) {
             duration: 0.6,
         })
         gsap.to('.navbar-menu-mobile',{
-            translateY: '100%',
+            translateY: '-100%',
             duration: 0.6,
             ease:CustomEase.create("custom", "M0,0,C0.702,0,0.3,1,1,1"),
             onComplete: ()=>{setIsMenuOpened(false)},

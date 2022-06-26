@@ -1,0 +1,30 @@
+.welcome{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+.welcome .message{
+    color: white;
+    font-size: 30px;
+    transform: translateY(-150px);
+}
+
+.welcome .message span.letter{
+    display: inline-block;
+    opacity: 0;
+}
+
+
+#welcome-svg{
+
+    width: 800px;
+}
+@media screen and (max-width: 500px){
+    .welcome .message{
+        font-size: 25px;
+    }
+}

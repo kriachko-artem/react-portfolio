@@ -12,7 +12,7 @@ body{
 .wrapper{
     font-family: sans-serif;
     opacity: 0;
-    padding-top: 200px;
+    padding-top: 100px;
     background-color: var(--main-bg-color);
     transition-property: background-color, color;
     transition: 0.5s ease-out;

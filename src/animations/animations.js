@@ -11,7 +11,7 @@ export function animateList(items){
         },
         {
             translateY: 0,
-            stagger: 0.05,
+            stagger: 0.1,
             opacity: 1,
             duration: 0.6,
         }
@@ -59,40 +59,6 @@ export const burgerAnimation = {
     }
 };
 
-// export function changeBackground(){
-//
-//     setTimeout(()=>{
-//         let sectionsPositionsY;
-//         const sec = document.querySelectorAll('section')
-//         const sections = [];
-//         sec.forEach((item)=>{
-//             sections.push(item)
-//         })
-//         sectionsPositionsY = sections.reduce((acc,item)=>{
-//             acc[(item.className).toString()] = item.offsetTop
-//             return acc
-//         },{})
-//         window.addEventListener('scroll',()=>{
-//             if (window.pageYOffset + window.innerHeight > sectionsPositionsY.footer*1.2){
-//                 document.documentElement.style
-//                     .setProperty('--main-bg-color', 'black');
-//                 document.documentElement.style
-//                     .setProperty('--main-text-color', 'white');
-//             }else if(window.pageYOffset + window.innerHeight > sectionsPositionsY.visitUs + 50){
-//                 document.documentElement.style
-//                     .setProperty('--main-bg-color', 'white');
-//                 document.documentElement.style
-//                     .setProperty('--main-text-color', 'black');
-//             } else {
-//                 document.documentElement.style
-//                     .setProperty('--main-bg-color', '#ea8823');
-//                 document.documentElement.style
-//                     .setProperty('--main-text-color', 'black');
-//             }
-//         })
-//     },300)
-//
-// }
 export function changeBackground(){
     const sections = document.querySelectorAll('section');
     gsap.registerPlugin(ScrollToPlugin)
@@ -232,45 +198,4 @@ export function mouseMoveCard3D(elements){
             });
         })
     }
-}
-export function drawSVG(path,time){
-    const length = document.querySelector(path).getTotalLength();
-    gsap.to(path,{
-        strokeDasharray: length,
-        duration: time,
-        ease: Expo.easeIn,
-        onComplete:()=>{
-            gsap.to(path,{
-                fill: 'white',
-                duration: 2,
-                ease: Expo.easeIn,
-                onComplete: ()=>{
-                    gsap.to(path,{
-                        translateY: -80,
-                        duration: 2,
-                        ease: Power3.easeInOut,
-                        onComplete: ()=>{
-                            gsap.fromTo('.message span',{
-                                opacity: 0,
-                                translateY: 30,
-                            },{
-                                opacity:1,
-                                translateY: 0,
-                                stagger: 0.1,
-                                ease: Back.easeOut.config(1.7),
-                            })
-                        }
-                    })
-                }
-            })
-        }
-    })
-}
-export function hideWelcome(){
-    gsap.to('.welcome > *',{
-        opacity:0,
-        translateY: -700,
-        duration: 2,
-        ease: Power2.easeIn,
-    })
 }

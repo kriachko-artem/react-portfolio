@@ -11,7 +11,7 @@
     position: fixed;
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
     transform: translate(-50%, -50%) rotate(0deg);
-    z-index: 3;
+    z-index: 110;
     pointer-events: none;
 }
 #cursor-point{
@@ -24,7 +24,7 @@
     position: fixed;
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
     transform: translate(-50%, -50%) rotate(0deg);
-    z-index: 3;
+    z-index: 110;
     pointer-events: none;
     background-color: var(--cursor-color);
 }

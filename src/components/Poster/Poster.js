@@ -18,7 +18,7 @@ export function Poster () {
             posterMainImage = document.querySelector('.poster_main .img-holder');
 
 
-        parallaxElement(posterMainImage,posterMainTitle,-50)
+        parallaxElement(posterMainImage,posterMainTitle,0)
         animatePoster(posterMainImage,posterMain,posterMainTitle)
 
 
@@ -49,13 +49,13 @@ export function Poster () {
         })
     }
     function parallaxElement(area,element,offset = 0){
-        startPosition = area.getBoundingClientRect().top/5+offset+50;
+        startPosition = area.getBoundingClientRect().top/5-50;
         window.addEventListener('scroll', ()=>{
             const areaPosition = {
                 top: area.getBoundingClientRect().top,
                 bottom: area.getBoundingClientRect().bottom,
             };
-            startPosition = areaPosition.top/5+offset+50;
+            startPosition = area.getBoundingClientRect().top/5-50;
             if ((areaPosition.top - window.innerHeight < 0)&&
                 (areaPosition.bottom > 0)){
                 gsap.to(element,{
