@@ -8,7 +8,7 @@
 }
 .navbar-menu-mobile{
     position: absolute;
-    bottom: 0;
+    top: 0;
     width: 100%;
     transform: translateY(100%);
     background-color: #fff;
