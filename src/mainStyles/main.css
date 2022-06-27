@@ -27,10 +27,14 @@ body{
     flex-direction: column;
 }
 section{
+    transform: translateY(100px);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
+}
+section.poster{
+    transform: translateY(0);
 }
 section.footer{
     margin-bottom: 0;

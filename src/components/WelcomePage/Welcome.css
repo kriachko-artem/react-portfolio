@@ -23,6 +23,44 @@
 
     width: 800px;
 }
+
+.welcome_image-holder{
+    position: relative;
+}
+.welcome_image-holder img{
+    opacity: 0;
+    transform: scale(0);
+}
+.welcome_image-holder img.mouse{
+    position: relative;
+    left: 8%;
+}
+.welcome_image-holder span{
+    position: absolute;
+    border-radius: 50%;
+    border: 3px #ea8823 dashed;
+    opacity: 0;
+    transform: scale(0);
+}
+.welcome_image-holder span.little{
+    width: 40px;
+    height: 40px;
+    left: 16px;
+    top: -16px;
+}
+.welcome_image-holder span.middle{
+    width: 60px;
+    height: 60px;
+    left: 7px;
+    top: -26px;
+}
+.welcome_image-holder span.big{
+    width: 80px;
+    height: 80px;
+    left: -3px;
+    top: -37px;
+}
+
 @media screen and (max-width: 500px){
     .welcome .message{
         font-size: 25px;

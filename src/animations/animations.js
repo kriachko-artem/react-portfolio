@@ -63,7 +63,7 @@ export function changeBackground(){
     const sections = document.querySelectorAll('section');
     gsap.registerPlugin(ScrollToPlugin)
     gsap.to(window,{
-        scrollTo: 'min'
+        scrollTo: 'min',
     })
     window.addEventListener('scroll',setBgColor)
 
@@ -89,11 +89,14 @@ export function changeBackground(){
         }
     }
 }
-export function showSection(){
-    document.querySelectorAll('section').forEach((item,index)=>{
-            if(window.pageYOffset > item.offsetTop - window.innerHeight){
-                gsap.to(item,{translateY:0,duration:1,ease:"back.out(1.7)"})
+export function showElementsByScroll(elements){
+    document.querySelectorAll(elements).forEach(item=>{
+        window.addEventListener('scroll',()=>{
+            if(window.pageYOffset > item.offsetTop*1.2 - window.innerHeight){
+                gsap.to(item,{translateY:0,duration:1,ease:"back.out(4)"})
             }
+        })
+
     })
 }
 
@@ -102,8 +105,8 @@ export function animateBody(){
     const wrapper = document.querySelector('.wrapper')
     gsap.to(wrapper,{
             opacity:1,
-            duration: 1.2,
-            ease: 'power1.in',
+            duration: 2,
+            ease: 'power1.inOut',
         });
 }
 export function setCursorPosition(){
@@ -163,7 +166,7 @@ export function deviceOrientation3D(element){
         if ((initialOffset.x > -180 && initialOffset.x < 180)&&
             (initialOffset.y > -90 && initialOffset.y < 90)){
             gsap.to(element,{
-                transform: `rotateY(${initialOffset.y/5}deg) rotateX(${initialOffset.x/5}deg)`,
+                transform: `rotateY(${initialOffset.y/5}deg) rotateX(${-initialOffset.x/5}deg)`,
                 duration: 1,
             });
         }

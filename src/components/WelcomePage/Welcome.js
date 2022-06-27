@@ -4,13 +4,17 @@ import {WelcomeSVG} from "./images/WelcomeSVG";
 import {Cursor} from "../Cursor/Cursor";
 import {gsap} from "gsap";
 import {Power2} from "gsap/gsap-core";
-import {ClickSVG} from "./images/ClickSVG";
+import finger from './images/finger.png'
+import mouse from './images/mouse.png'
 
 export function Welcome ({setIsWelcome}) {
-    const message = 'Please, click to view my portfolio';
-    useEffect(()=>{
+    const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
+    const message = ()=>{
+        if(!devices.test(navigator.userAgent)){
+            return 'Please, click to view my portfolio'
+        } else return 'Please, tap to view my portfolio'
+    };
 
-    },[])
     function hideWelcome(){
         gsap.to('.welcome > *',{
             opacity:0,
@@ -25,15 +29,24 @@ export function Welcome ({setIsWelcome}) {
   return (
           <div onClick={hideWelcome} className="welcome">
               <WelcomeSVG/>
-              <ClickSVG/>
+
               <div className="message">
-                  {Array.from(message).map((item,index)=>{
+                  {Array.from(message()).map((item,index)=>{
                       if (item===' '){
                           return (<span key={index}>{item}</span>)
                       } else return (<span className={'letter'} key={index}>{item}</span>)
                   })}
               </div>
-
+              <div className="welcome_image-holder">
+                  {!devices.test(navigator.userAgent)?(
+                      <img src={mouse} alt="Mouse" className="mouse"/>
+                  ):(
+                      <img src={finger} alt="Finger" className="Finger"/>
+                  )}
+                  <span className={'little'}/>
+                  <span className={'middle'}/>
+                  <span className={'big'}/>
+              </div>
               <Cursor/>
           </div>
       )

@@ -22,9 +22,9 @@ export function Poster () {
         animatePoster(posterMainImage,posterMain,posterMainTitle)
 
 
-        // moveCloud('.cloud-one',400,7,120)
-        // moveCloud('.cloud-two', 0,10,150)
-        // moveCloud('.cloud-three',-300,13,210)
+        moveCloud('.cloud-one',400,7,120)
+        moveCloud('.cloud-two', 0,10,150)
+        moveCloud('.cloud-three',-300,13,210)
     },[])
 
 

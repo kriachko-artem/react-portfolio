@@ -10,40 +10,84 @@ export function WelcomeSVG () {
     },[])
 
     function drawSVG(path,time){
-        const length = document.querySelector(path).getTotalLength();
-        gsap.to(path,{
-            strokeDasharray: length,
-            duration: time,
-            ease: Expo.easeIn,
-            onComplete:()=>{
-                gsap.to(path,{
-                    fill: 'white',
-                    duration: 2,
-                    ease: Expo.easeIn,
-                    onComplete: ()=>{
-                        gsap.to(path,{
-                            translateY: -80,
-                            duration: 2,
-                            ease: Power3.easeInOut,
-                            onComplete: ()=>{
-                                gsap.fromTo('.message span',{
-                                    opacity: 0,
-                                    translateY: 30,
-                                },{
-                                    opacity:1,
-                                    translateY: 0,
-                                    stagger: 0.1,
-                                    ease: Back.easeOut.config(1.7),
-                                    onComplete: ()=>{
+            const length = document.querySelector(path).getTotalLength();
+            gsap.to(path,{
+                strokeDasharray: length,
+                duration: time,
+                ease: Expo.easeIn,
+                onComplete:()=>{
+                    gsap.to(path,{
+                        fill: 'white',
+                        duration: 2,
+                        ease: Expo.easeIn,
+                        onComplete: ()=>{
+                            gsap.to(path,{
+                                translateY: -80,
+                                duration: 2,
+                                ease: Power3.easeInOut,
+                                onComplete: ()=>{
+                                    gsap.fromTo('.message span',{
+                                        opacity: 0,
+                                        translateY: 30,
+                                    },{
+                                        opacity:1,
+                                        translateY: 0,
+                                        stagger: 0.05,
+                                        ease: Back.easeOut.config(1.7),
+                                        onComplete: ()=>{
+                                            gsap.to('.welcome_image-holder img',{
+                                                opacity: 1,
+                                                duration: 1,
+                                            })
+                                            gsap.to('.welcome_image-holder img',{
+                                                scale: 1,
+                                                ease: "elastic.out(1, 0.3)",
+                                                duration: 1.5,
+                                                onComplete: ()=>{
 
-                                    }
-                                })
-                            }
-                        })
-                    }
-                })
-            }
-        })
+                                                    const tl = gsap.timeline({repeat: -1,
+                                                        repeatDelay: 2,
+                                                        onRepeat:()=>{if (document.querySelector('.welcome')){
+                                                            tl.repeat(-1)
+                                                        }else tl.repeat(0)
+                                                        }});
+                                                    tl.to('.welcome_image-holder img',{
+                                                        scale: 0.9,
+                                                        duration: 0.2,
+                                                        onComplete:()=>{
+                                                            gsap.fromTo('.welcome_image-holder span',{
+                                                                    scale: 0,
+                                                                    opacity:0,
+                                                                },{
+                                                                    opacity:1,
+                                                                    scale: 1.7,
+                                                                    duration: 2,
+                                                                    onComplete: ()=>{
+                                                                        gsap.to('.welcome_image-holder span',{
+                                                                            opacity: 0,
+                                                                            duration: 0.3,
+                                                                        })
+                                                                    }
+                                                                }
+                                                            )}
+                                                    })
+                                                    tl.to('.welcome_image-holder img',{
+                                                        scale: 1,
+                                                        duration: 0.2,
+                                                        ease: "back.out(1.7)",
+                                                    })
+
+
+                                                }
+                                            })
+                                        }
+                                    })
+                                }
+                            })
+                        }
+                    })
+                }
+            })
     }
   return (
       <svg className={'Hello-World'} version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" fill='none' stroke='white' viewBox="0 0 432 432" enableBackground="new 0 0 432 432">
