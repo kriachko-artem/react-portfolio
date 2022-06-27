@@ -89,23 +89,26 @@ export function changeBackground(){
     }
 }
 export function showElementsByScroll(elements){
+    function move(item){
+        if(window.pageYOffset > item.offsetTop*1.2 - window.innerHeight){
+            gsap.to(item,{translateY:0,duration:1,ease:"back.out(4)"})
+        }
+    }
     document.querySelectorAll(elements).forEach(item=>{
+        move(item)
         window.addEventListener('scroll',()=>{
-            if(window.pageYOffset > item.offsetTop*1.2 - window.innerHeight){
-                gsap.to(item,{translateY:0,duration:1,ease:"back.out(4)"})
-            }
+            move(item)
         })
 
     })
 }
 
 export function animateBody(){
-
     const wrapper = document.querySelector('.wrapper')
     gsap.to(wrapper,{
             opacity:1,
             duration: 2,
-            ease: 'power1.inOut',
+            ease: 'power4.in',
         });
 }
 export function setCursorPosition(){

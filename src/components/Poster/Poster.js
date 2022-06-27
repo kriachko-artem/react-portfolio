@@ -32,8 +32,7 @@ export function Poster () {
 
     function moveCloud(element,start,opacityDuration,animationDuration){
 
-       const cloudWidth = document.querySelector(element).offsetWidth,
-           areaWidth = document.querySelector(element).parentNode.offsetWidth;
+       const areaWidth = document.querySelector(element).parentNode.offsetWidth;
 
        gsap.to(element,{
            opacity: 1,
