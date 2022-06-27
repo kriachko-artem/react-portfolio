@@ -1,19 +1,13 @@
 import {gsap} from "gsap";
-import {Expo, Power3,Power2, Back} from "gsap/gsap-core";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 
 export function animateList(items){
-    gsap.fromTo(items,{
+    gsap.from(items,{
             translateY: 20,
             opacity: 0,
-
-        },
-        {
-            translateY: 0,
-            stagger: 0.1,
-            opacity: 1,
             duration: 0.6,
+            stagger: 0.1,
         }
     )
 }
