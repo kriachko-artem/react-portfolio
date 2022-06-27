@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import './Welcome.css'
 import {WelcomeSVG} from "./images/WelcomeSVG";
 import {Cursor} from "../Cursor/Cursor";

@@ -62,7 +62,7 @@ section.cards .container hr{
     width: 100%;
     height: auto;
     position: relative;
-    transform-origin: center center -1000px;
+    transform-origin: center center 0;
     transform-style: preserve-3d;
 }
 .card .card_img-holder .card-3d{
