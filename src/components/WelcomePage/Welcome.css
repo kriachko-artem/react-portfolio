@@ -5,7 +5,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-family: sans-serif;
+}
+.welcome > *{
+    position: relative;
+    top: 50px;
 }
 .welcome .message{
     color: white;
