@@ -91,14 +91,12 @@ export function changeBackground(){
 export function showElementsByScroll(elements){
     function move(item){
         if(window.pageYOffset > item.offsetTop*1.2 - window.innerHeight){
-            gsap.to(item,{translateY:0,duration:1,ease:"back.out(4)"})
+            gsap.to(item,{translateY:0,duration:0.3,ease:"power1.inOut"})
         }
     }
     document.querySelectorAll(elements).forEach(item=>{
         move(item)
-        window.addEventListener('scroll',()=>{
-            move(item)
-        })
+        window.addEventListener('scroll',()=>{move(item)})
 
     })
 }
