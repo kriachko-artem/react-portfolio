@@ -107,7 +107,7 @@ export function animateBody(){
     const wrapper = document.querySelector('.wrapper')
     gsap.to(wrapper,{
             opacity:1,
-            duration: 2,
+            duration: 1,
             ease: 'power4.in',
         });
 }
