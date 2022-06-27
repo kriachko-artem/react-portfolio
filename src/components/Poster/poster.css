@@ -55,7 +55,7 @@
 }
 .poster_main .img-holder span.cloud-two{
     transform: rotateY(180deg);
-    top: 150px;
+    top: 0;
     width: 500px;
     height: 300px;
 }
