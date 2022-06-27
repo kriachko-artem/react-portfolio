@@ -30,6 +30,8 @@
 .welcome_image-holder img{
     opacity: 0;
     transform: scale(0);
+    position: relative;
+    z-index: 1;
 }
 .welcome_image-holder img.mouse{
     position: relative;
@@ -41,6 +43,7 @@
     border: 3px #ea8823 dashed;
     opacity: 0;
     transform: scale(0);
+    z-index: 0;
 }
 .welcome_image-holder span.little{
     width: 40px;

@@ -3,11 +3,16 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 
 export function animateList(items){
-    gsap.from(items,{
+    gsap.fromTo(items,{
             translateY: 20,
             opacity: 0,
-            duration: 0.6,
+
+        },
+        {
+            translateY: 0,
             stagger: 0.1,
+            opacity: 1,
+            duration: 0.6,
         }
     )
 }
