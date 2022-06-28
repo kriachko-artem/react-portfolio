@@ -25,7 +25,7 @@ export function Background () {
         circles.push(circle)
     }
     console.log(circles)
-    const windowHeight = window.innerHeight;
+    const windowHeight = window.innerHeight*1.2;
   return (
       <div className={'background'} style={{height: windowHeight}}>
           {
