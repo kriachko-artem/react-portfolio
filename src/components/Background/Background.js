@@ -28,7 +28,7 @@ export function Background () {
     const windowHeight = window.innerHeight;
   return (
       <div className={'background'}
-           // style={{height: windowHeight}}
+           style={{minHeight: windowHeight}}
       >
           {
               circles.map(item=>{
