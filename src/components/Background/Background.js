@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './background.css'
+import {animateBackgroundCircles} from "../../animations/animations";
 
 
 export function Background () {
@@ -13,26 +14,32 @@ export function Background () {
         let circle = {
             id:i,
             speed: Math.floor(Math.random() * (4 - 1) + 1),
+            direction: Math.random()>0.5?1:-1,
             styles:{
                 width: size,
                 height: size,
                 backgroundColor: color,
-                top: Math.floor(Math.random() * 100)+'%',
+                top: Math.floor(Math.random() * (100-10)+10)+'%',
                 left: Math.floor(Math.random() * 90)+'%',
                 boxShadow: `0 0 10px 10px ${color}`
             }
         }
         circles.push(circle)
     }
-    console.log(circles)
     const windowHeight = window.innerHeight;
+
+    useEffect(()=>{
+        animateBackgroundCircles('.background span')
+    },[])
+
+
   return (
       <div className={'background'}
            style={{minHeight: windowHeight}}
       >
           {
               circles.map(item=>{
-                  return <span key={item.id} style={item.styles} data-speed={item.speed}/>
+                  return <span key={item.id} style={item.styles} data-speed={item.speed} data-direction={item.direction}/>
               })
           }
       </div>
