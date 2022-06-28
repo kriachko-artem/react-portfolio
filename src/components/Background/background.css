@@ -1,7 +1,7 @@
 .background{
     position: fixed;
     width: 100%;
-    height: inherit;
+    min-height: 100%;
     top: 0;
     z-index: 0;
 }
