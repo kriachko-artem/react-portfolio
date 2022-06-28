@@ -17,7 +17,6 @@ const isMobile = devices.test(navigator.userAgent);
 //         console.log(permission)
 //     })
 // }
-deviceOrientation3D('.card_img-holder')
 export function Cards () {
     useEffect(()=>{
         if (isMobile === false){

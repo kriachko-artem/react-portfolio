@@ -19,7 +19,6 @@ export function Welcome ({setIsWelcome}) {
     const getAccessMessage = 'This site uses device rotation'
     function getAccess(){
         if (typeof DeviceMotionEvent.requestPermission === 'function'){
-            document.querySelector('.message').innerHTML = 'is Function'
             DeviceMotionEvent.requestPermission()
                 .then(() =>{
                 }).catch(permission =>{
