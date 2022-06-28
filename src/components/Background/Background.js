@@ -25,9 +25,9 @@ export function Background () {
         circles.push(circle)
     }
     console.log(circles)
-
+    const windowHeight = window.innerHeight;
   return (
-      <div className={'background'}>
+      <div className={'background'} style={{height: windowHeight}}>
           {
               circles.map(item=>{
                   return <span key={item.id} style={item.styles} data-speed={item.speed}/>
