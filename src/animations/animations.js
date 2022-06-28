@@ -1,5 +1,6 @@
 import {gsap} from "gsap";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
+import {Back} from "gsap/gsap-core";
 
 
 export function animateList(items){
@@ -202,3 +203,25 @@ export function mouseMoveCard3D(elements){
         })
     }
 }
+
+export function showTextByLetter(letters){
+    gsap.fromTo(letters,{
+        opacity: 0,
+        translateY: 30,
+    },{
+        opacity:1,
+        translateY: 0,
+        stagger: 0.05,
+        ease: Back.easeOut.config(1.7),
+})}
+
+export function animateBackgroundCircles(){
+
+}
+
+
+
+
+
+
+

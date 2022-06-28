@@ -1,0 +1,13 @@
+.background{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.background span{
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px;
+}

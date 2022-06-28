@@ -9,16 +9,15 @@ import {mouseMoveCard3D} from "../../animations/animations";
 
 const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
 const isMobile = devices.test(navigator.userAgent);
-function getAccess(){
-    DeviceMotionEvent.requestPermission()
-        .then(() =>{
-            deviceOrientation3D('.card_img-holder')
-        }).catch(permission =>{
-        // deviceOrientation3D('.card_img-holder')
-        console.log(permission)
-    })
-}
-
+// function getAccess(){
+//     DeviceMotionEvent.requestPermission()
+//         .then(() =>{
+//             deviceOrientation3D('.card_img-holder')
+//         }).catch(permission =>{
+//         console.log(permission)
+//     })
+// }
+deviceOrientation3D('.card_img-holder')
 export function Cards () {
     useEffect(()=>{
         if (isMobile === false){
@@ -39,7 +38,7 @@ export function Cards () {
                           {isMobile? (
                               <>
                                   <h4 className={'description-rotate'}>You can rotate your phone to see the my custom 3D effect to card</h4>
-                                  <button onClick={getAccess} className={'get-access'}>Start 3D</button>
+                                  <button onClick={()=>deviceOrientation3D('.card_img-holder')} className={'get-access'}>Start 3D</button>
                               </>
                           ):(
                               <>

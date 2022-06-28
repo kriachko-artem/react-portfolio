@@ -27,6 +27,8 @@ body{
     flex-direction: column;
 }
 section{
+    position: relative;
+    z-index: 1;
     transform: translateY(100px);
     display: flex;
     flex-direction: column;

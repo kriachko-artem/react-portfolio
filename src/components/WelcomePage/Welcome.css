@@ -8,17 +8,24 @@
     justify-content: center;
     font-family: sans-serif;
 }
+.welcome .welcome_svg-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .welcome > *{
     position: relative;
     top: 50px;
 }
-.welcome .message{
+.welcome .message,
+.welcome .ask-access{
     color: white;
     font-size: 30px;
     transform: translateY(-150px);
 }
 
-.welcome .message span.letter{
+.welcome .letter{
     display: inline-block;
     opacity: 0;
 }
@@ -70,7 +77,8 @@
 }
 
 @media screen and (max-width: 500px){
-    .welcome .message{
+    .welcome .message,
+    .welcome .ask-access{
         font-size: 25px;
     }
 }
