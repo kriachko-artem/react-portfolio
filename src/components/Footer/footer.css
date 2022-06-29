@@ -20,7 +20,7 @@ section.footer .footer-main{
     width: 100%;
     max-width: 400px;
     overflow: hidden;
-    transform-origin: center bottom;
+    transform-origin: right bottom;
     position: relative;
     transition: 0.5s ease-in-out;
 }
@@ -29,6 +29,15 @@ section.footer .footer-main{
 }
 .footer .certificate img{
     width: 100%;
+}
+.footer .qr-to-mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer .qr-to-mobile h4{
+    text-align: center;
+    margin-bottom: 20px;
 }
 .footer .qr-to-mobile .qr-holder{
     overflow: hidden;

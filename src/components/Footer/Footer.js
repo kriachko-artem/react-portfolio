@@ -7,6 +7,7 @@ import downloadIco from './images/211720_download_cloud_icon.png'
 import {setBigCursor} from "../../animations/animations";
 
 export function Footer () {
+    const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
     useEffect(()=>{
         setBigCursor('.footer .certificate img')
         setBigCursor('.footer .contacts-list li')
@@ -41,11 +42,13 @@ export function Footer () {
                   <img src={certificate} alt="Certificate"/>
               </div>
           </div>
-              <div className="qr-to-mobile">
-                  <div className="qr-holder">
-                      <img src={qrCode} alt="QR-Code"/>
-                  </div>
-              </div>
+              {!devices.test(navigator.userAgent)?
+                  <div className="qr-to-mobile">
+                      <h4>Scan QR-code to see on mobile</h4>
+                      <div className="qr-holder">
+                          <img src={qrCode} alt="QR-Code"/>
+                      </div>
+                  </div>:null}
           </div>
           <div className="CV">
               <a href={CV}><img src={downloadIco} alt="Download"/></a>
