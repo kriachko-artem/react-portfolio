@@ -2,39 +2,42 @@
 export const sidebarData = [
     {
         id: 1,
-        navLink: "What's on",
+        navLink: "Education",
         list: [
-            'Exhibitions',
-            'Events',
+            'Hillel IT School - Front-End Pro',
+            'Source It School - Markup Developer',
+            'Yaroslav Mudryi NLU - Magister degree',
         ]
     },
     {
         id: 2,
-        navLink: "Visit",
+        navLink: "Work experience",
         list: [
-            'Plan Your Trip',
-            'Kids & Families',
-            'Shop',
-            'Eat',
-            'School Visits',
-            'Venue Hire',
+            'NaNutru - Front-End Developer (five month)',
+            'Shark Farm - Front-End Developer (eight month)',
+            'Freelance UpWork - Markup Developer (one year)',
         ]
     },
     {
         id: 3,
-        navLink: "Explore",
+        navLink: "My languages",
         list: [
-            'Collection',
-            'Exhibition Archive',
+            'Ukrainian - Native',
+            'English - Pre-intermediate',
+            'Russian -  Proficiency (try to forget)',
         ],
     },
     {
         id: 4,
-        navLink: "Classes",
+        navLink: 'Skills',
         list: [
-            'Short Courses',
-            'Workshops',
-            'Kids & Teens',
-        ],
-    },
+            'HTML/CSS',
+            'JavaScript',
+            'React',
+            'jQuery',
+            'Webpack',
+            'Bootstrap',
+            'GitHub',
+        ]
+    }
 ];

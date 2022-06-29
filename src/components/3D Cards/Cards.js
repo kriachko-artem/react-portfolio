@@ -52,9 +52,6 @@ export function Cards () {
                                       <img src={firstCardImg} alt="Plan your trip"/>
                                   </div>
                               </div>
-                              <h5 className="card_name">
-                                  Card name
-                              </h5>
                           </div>
                       ):(
                           <>
@@ -69,9 +66,6 @@ export function Cards () {
                                           <span className={'back'}/>
                                       </div>
                                   </div>
-                                  <h5 className="card_name">
-                                      Card one
-                                  </h5>
                               </div>
                               <div className="card">
                                   <div className="card_img-holder">
@@ -84,9 +78,6 @@ export function Cards () {
                                           <span className={'back'}/>
                                       </div>
                                   </div>
-                                  <h5 className="card_name">
-                                      Card two
-                                  </h5>
                               </div>
                               <div className="card">
                                   <div className="card_img-holder">
@@ -99,13 +90,9 @@ export function Cards () {
                                           <span className={'back'}/>
                                       </div>
                                   </div>
-                                  <h5 className="card_name">
-                                      Card three
-                                  </h5>
                               </div>
                           </>
                       )}
-
                   </div>
               </div>
           </div>

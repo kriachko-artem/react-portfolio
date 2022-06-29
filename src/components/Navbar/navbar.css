@@ -33,6 +33,7 @@
     background: none;
     border: none;
     position: relative;
+    color: var(--main-text-color);
 }
 .header-navbar button:after{
     content: '';

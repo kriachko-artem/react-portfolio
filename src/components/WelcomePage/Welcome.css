@@ -16,6 +16,7 @@
 }
 .welcome .welcome_svg-holder svg{
     width: 100%;
+    max-width: 650px;
 }
 /*.welcome > *{*/
 /*    position: relative;*/

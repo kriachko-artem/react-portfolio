@@ -17,7 +17,7 @@ export function SidebarList ({list}) {
               {
                   list.map((item,index)=>{
                       return (
-                              <li key={index}><a href="#">{item}</a></li>
+                              <li key={index}>{item}</li>
                       )
                   })
               }

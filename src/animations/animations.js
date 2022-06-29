@@ -221,7 +221,7 @@ export function animateBackgroundCircles(circles){
         tl.to(item,{
             opacity:0.7,
             translateX: (Math.random()>0.5?1:-1) * 20+'%',
-            duration: item.dataset.speed*6,
+            duration: item.dataset.speed*3,
         })
         tl.to(item,{
             opacity:0,

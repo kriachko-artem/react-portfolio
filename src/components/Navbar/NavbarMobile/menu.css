@@ -30,6 +30,7 @@
     width: 60%;
 }
 .navbar-menu-mobile__list{
+    text-align: right;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

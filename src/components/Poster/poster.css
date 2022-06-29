@@ -82,7 +82,7 @@
 .poster__author-info{
     line-height: 140%;
     margin-top: 30px;
-    margin-right: 60px;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-self: flex-end;

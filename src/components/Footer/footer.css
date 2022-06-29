@@ -1,3 +1,69 @@
-section.footer{
-    height: 500px;
+section.footer {
+    border-top: 1px solid var(--main-text-color);
+    padding: 100px 5%;
+    margin-bottom: 100px;
+}
+section.footer .footer-main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .contacts h4{
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.footer .contacts-list li{
+    margin-bottom: 10px;
+    line-height: 120%;
+}
+.footer .certificate .image-holder{
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    transform-origin: center bottom;
+    position: relative;
+    transition: 0.5s ease-in-out;
+}
+.footer .certificate .image-holder.opened{
+    transform: scale(2);
+}
+.footer .certificate img{
+    width: 100%;
+}
+.footer .qr-to-mobile .qr-holder{
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
+.footer .qr-to-mobile .qr-holder img{
+    width: 100%;
+}
+.footer .CV{
+    margin-top: 60px;
+    width: 200px;
+    height: 200px;
+}
+.footer .CV img{
+    width: 100%;
+    border-radius: 50%;
+}
+.footer .CV h4{
+    text-align: center;
+}
+@media screen and (max-width: 900px){
+    section.footer .footer-main{
+        flex-direction: column;
+        align-items: center;
+    }
+    section.footer .footer-main > *:not(:last-child){
+        margin-bottom: 50px;
+    }
+    .footer .certificate .image-holder.opened{
+        transform: scale(1.3);
+    }
+}
+@media screen and (max-width: 500px){
+    .footer .certificate .image-holder.opened{
+        transform: scale(1);
+    }
 }
