@@ -217,7 +217,6 @@ export function showTextByLetter(letters){
 
 export function animateBackgroundCircles(circles){
     document.querySelectorAll(circles).forEach(item=>{
-        console.dir(item)
         const tl = gsap.timeline({repeat:-1});
         tl.to(item,{
             opacity:1,
@@ -242,8 +241,8 @@ export function moveCircleByRotation(elements){
             (initialOffset.y > -90 && initialOffset.y < 90)){
             document.querySelectorAll(elements).forEach(item=>{
                 gsap.to(item,{
-                    translateX: initialOffset.y/(item.holderSpeed*2),
-                    translateY: initialOffset.x/(item.holderSpeed*2),
+                    translateX: initialOffset.y/(item.dataset.speed*2),
+                    translateY: initialOffset.x/(item.dataset.speed*2),
                 })
             })
         }

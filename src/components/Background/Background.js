@@ -45,7 +45,7 @@ export function Background () {
           {
               circles.map(item=>{
                   return (
-                      <div key={item.id} className={'circle-holder'} style={item.holderPosition}>
+                      <div key={item.id} className={'circle-holder'} style={item.holderPosition} data-speed={item.holderSpeed}>
                         <span key={item.id} style={item.styles} data-speed={item.speed} data-direction={item.direction}/>
                       </div>
                   )
