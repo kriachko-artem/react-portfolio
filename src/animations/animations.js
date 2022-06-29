@@ -215,21 +215,37 @@ export function showTextByLetter(letters){
         ease: Back.easeOut.config(1.7),
 })}
 
-export function animateBackgroundCircles(circles,rotateX = 0,rotateY = 0){
+export function animateBackgroundCircles(circles){
     document.querySelectorAll(circles).forEach(item=>{
         console.dir(item)
         const tl = gsap.timeline({repeat:-1});
         tl.to(item,{
             opacity:1,
-            translateX: rotateX +'%',
-            translateY: rotateY+'%',
+            translateX: (Math.random()>0.5?1:-1) * 20+'%',
             duration: item.dataset.speed*5,
         })
         tl.to(item,{
-            // opacity:0,
+            opacity:0,
             duration: item.dataset.speed*7,
                 })
         })
+}
+export function moveCircleByRotation(elements){
+    const initialOffset = {
+        x: 0,
+        y: 0,
+    };
+    window.addEventListener('devicemotion',({rotationRate: {alpha, beta, gamma}})=>{
+        initialOffset.x += Math.round(alpha/10);
+        initialOffset.y += Math.round(beta/10)
+        if ((initialOffset.x > -180 && initialOffset.x < 180)&&
+            (initialOffset.y > -90 && initialOffset.y < 90)){
+            gsap.to(elements,{
+                translateX: initialOffset.x,
+                translateY: initialOffset.y,
+            })
+        }
+    })
 }
 
 
