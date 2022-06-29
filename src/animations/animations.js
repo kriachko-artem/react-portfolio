@@ -219,9 +219,9 @@ export function animateBackgroundCircles(circles){
     document.querySelectorAll(circles).forEach(item=>{
         const tl = gsap.timeline({repeat:-1});
         tl.to(item,{
-            opacity:1,
+            opacity:0.7,
             translateX: (Math.random()>0.5?1:-1) * 20+'%',
-            duration: item.dataset.speed*5,
+            duration: item.dataset.speed*6,
         })
         tl.to(item,{
             opacity:0,
