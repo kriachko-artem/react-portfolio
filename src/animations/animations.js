@@ -221,12 +221,12 @@ export function animateBackgroundCircles(circles,rotateX = 0,rotateY = 0){
         const tl = gsap.timeline({repeat:-1});
         tl.to(item,{
             opacity:1,
-            translateX: rotateX + (Math.random()>0.5?1:-1) * 20+'%',
-            translateY: rotateY,
+            translateX: rotateX +'%',
+            translateY: rotateY+'%',
             duration: item.dataset.speed*5,
         })
         tl.to(item,{
-            opacity:0,
+            // opacity:0,
             duration: item.dataset.speed*7,
                 })
         })
