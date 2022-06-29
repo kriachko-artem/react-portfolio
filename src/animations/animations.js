@@ -244,6 +244,7 @@ export function moveCircleByRotation(elements){
                 translateX: initialOffset.x,
                 translateY: initialOffset.y,
             })
+            console.log(initialOffset.x,'/', initialOffset.y,)
         }
     })
 }
