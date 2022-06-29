@@ -240,11 +240,13 @@ export function moveCircleByRotation(elements){
         initialOffset.y += Math.round(beta/10)
         if ((initialOffset.x > -180 && initialOffset.x < 180)&&
             (initialOffset.y > -90 && initialOffset.y < 90)){
-            gsap.to(elements,{
-                translateX: initialOffset.x,
-                translateY: initialOffset.y,
+            document.querySelectorAll(elements).forEach(item=>{
+                gsap.to(item,{
+                    translateX: initialOffset.y/3,
+                    translateY: initialOffset.x/3,
+                    duration: item.holderSpeed,
+                })
             })
-            console.log(initialOffset.x,'/', initialOffset.y,)
         }
     })
 }

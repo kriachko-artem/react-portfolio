@@ -17,6 +17,7 @@ export function Background () {
                 left: Math.floor(Math.random() * 90)+'%',
                 top: Math.floor(Math.random() * (100-10)+10)+'%',
             },
+            holderSpeed: Math.random() * (5 - 2) + 2,
             speed: Math.random() * (4 - 1) + 1,
             direction: Math.random()>0.5?1:-1,
             styles:{
