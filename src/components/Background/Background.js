@@ -13,7 +13,7 @@ export function Background () {
             color = colors[Math.floor(Math.random() * colors.length)];
         let circle = {
             id:i,
-            speed: Math.floor(Math.random() * (4 - 1) + 1),
+            speed: Math.random() * (4 - 1) + 1,
             direction: Math.random()>0.5?1:-1,
             styles:{
                 width: size,
@@ -28,8 +28,30 @@ export function Background () {
     }
     const windowHeight = window.innerHeight;
 
+    const rotation = {
+        x: 0,
+        y: 0,
+    };
+
+    function moveCircle(){
+        const initialOffset = {
+            x: 0,
+            y: 0,
+        };
+        window.addEventListener('devicemotion',({rotationRate: {alpha, beta, gamma}})=>{
+            initialOffset.x += Math.round(alpha/10);
+            initialOffset.y += Math.round(beta/10)
+            if ((initialOffset.x > -180 && initialOffset.x < 180)&&
+                (initialOffset.y > -90 && initialOffset.y < 90)){
+                rotation.x=initialOffset.x/5;
+                rotation.y=initialOffset.y/5;
+            }
+        })
+    }
+
     useEffect(()=>{
-        animateBackgroundCircles('.background span')
+        moveCircle()
+        animateBackgroundCircles('.background span',rotation.x,rotation.y)
     },[])
 
 
