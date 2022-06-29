@@ -242,9 +242,8 @@ export function moveCircleByRotation(elements){
             (initialOffset.y > -90 && initialOffset.y < 90)){
             document.querySelectorAll(elements).forEach(item=>{
                 gsap.to(item,{
-                    translateX: initialOffset.y/3,
+                    translateX: initialOffset.y/3/ item.holderSpeed,
                     translateY: initialOffset.x/3,
-                    duration: item.holderSpeed,
                 })
             })
         }
