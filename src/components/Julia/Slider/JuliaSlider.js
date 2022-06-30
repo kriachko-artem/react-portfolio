@@ -29,39 +29,29 @@ export function JuliaSlider () {
           <div className="julia_slider">
               <Slider {...settings}>
                   <div className={'slider-item'}>
-                    <a href="">
                         <div className="image-holder">
                             <img src={screenOne} alt="gut_feeling"/>
                         </div>
-                    </a>
                 </div>
                 <div className={'slider-item'}>
-                    <a href="">
                         <div className="image-holder">
                             <img src={screenTwo} alt="Wonder_Cupboards"/>
                         </div>
-                    </a>
                 </div>
                <div className={'slider-item'}>
-                   <a href="">
                        <div className="image-holder">
                             <img src={screenThree} alt="National_Photography"/>
                        </div>
-                   </a>
                 </div>
                 <div className={'slider-item'}>
-                    <a href="">
                         <div className="image-holder">
                             <img src={screenFour} alt="Sketch"/>
                         </div>
-                    </a>
                 </div>
                 <div className={'slider-item'}>
-                  <a href="">
                       <div className="image-holder">
                           <img src={screenFive} alt="Sketch"/>
                       </div>
-                  </a>
                 </div>
               </Slider>
           </div>

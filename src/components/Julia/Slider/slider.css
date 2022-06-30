@@ -52,7 +52,7 @@
     width: 100%;
     transition: 0.5s;
 }
-.slider-item a:hover img{
+.slider-item:hover img{
      transform: scale(1.1);
  }
 .slider-item text{

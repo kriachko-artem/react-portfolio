@@ -6,7 +6,6 @@ import {gsap} from "gsap";
 import {Power2} from "gsap/gsap-core";
 import finger from './images/finger.png'
 import mouse from './images/mouse.png'
-import {deviceOrientation3D} from "../../animations/animations";
 
 
 export function Welcome ({setIsWelcome}) {
@@ -18,7 +17,7 @@ export function Welcome ({setIsWelcome}) {
     };
     const getAccessMessage = 'This site uses device rotation'
     function getAccess(){
-        if (typeof DeviceMotionEvent.requestPermission === 'function'){
+        if (devices.test(navigator.userAgent)){
             DeviceMotionEvent.requestPermission()
                 .then(() =>{
                 }).catch(permission =>{
