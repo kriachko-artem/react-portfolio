@@ -48,6 +48,7 @@
     opacity: 0;
     position: absolute;
     z-index: -1;
+    pointer-events: none;
 }
 .poster_main .img-holder span.cloud-one{
     width: 300px;
@@ -62,6 +63,7 @@
 .poster_main .img-holder img{
     width: 100%;
     height: auto;
+    pointer-events: none;
 }
 .poster .poster_main__label{
     display: flex;

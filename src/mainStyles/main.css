@@ -53,3 +53,7 @@ hr{
         max-width: 970px;
     }
 }
+*::selection{
+    color: #fff;
+    background-color: var(--cursor-color);
+}

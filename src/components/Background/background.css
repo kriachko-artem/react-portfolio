@@ -2,7 +2,8 @@
     position: fixed;
     width: 100%;
     top: 0;
-    -webkit-transform: translate3d(0,0,0)
+    -webkit-transform: translate3d(0,0,0);
+    pointer-events: none;
 }
 .background .circle-holder{
     position: absolute;
