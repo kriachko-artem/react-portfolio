@@ -1,10 +1,9 @@
 section.footer {
-    border-top: 1px solid var(--main-text-color);
-    padding: 100px 5%;
-    margin-bottom: 100px;
     z-index: 5;
 }
 section.footer .footer-main{
+    border-top: 1px solid var(--main-text-color);
+    padding: 100px 5% 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -52,6 +51,7 @@ section.footer .footer-main{
     margin-top: 60px;
     width: 200px;
     height: 200px;
+    margin-bottom: 100px;
 }
 .footer .CV img{
     width: 100%;

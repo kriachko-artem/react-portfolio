@@ -34,7 +34,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 60px;
+    padding-top: 100px;
 }
 section.poster{
     transform: translateY(0);
