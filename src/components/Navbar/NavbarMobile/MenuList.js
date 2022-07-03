@@ -9,7 +9,8 @@ export function MenuList ({list}) {
     },[list])
   return (
           <ul className={'menu-list'}>
-              {list.map((item,index)=>{
+              <h3 className={'title'}>{list.navLink}</h3>
+              {list.list.map((item,index)=>{
                   return <li key={index}>{item}</li>
               })}
           </ul>

@@ -79,7 +79,6 @@
 .poster .poster_main__label span:nth-child(3){
     align-self: end;
     position: relative;
-    left: 15%;
 }
 .poster__author-info{
     line-height: 140%;

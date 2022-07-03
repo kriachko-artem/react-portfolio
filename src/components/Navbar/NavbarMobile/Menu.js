@@ -70,10 +70,10 @@ export function Menu ({setIsMenuOpened}) {
         document.getElementById(id).classList.add('active')
 
         setList(()=>{
-            const obj = sidebarData.find(item=>{
-                return item.id === id
-            })
-            return obj.list
+            const obj =
+                sidebarData.find(item=>{
+                return item.id === id})
+            return obj
         })
     }
   return (
