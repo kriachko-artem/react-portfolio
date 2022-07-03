@@ -249,26 +249,6 @@ export function moveCircleByRotation(elements){
     window.addEventListener('devicemotion',({rotationRate: {alpha, beta, gamma}})=>{
         initialOffset.x += Math.round(alpha/10);
         initialOffset.y += Math.round(beta/10)
-        if (initialOffset.x < -180){
-            if (alpha > 0){
-                initialOffset.x += alpha/10
-            }
-        }
-        if (initialOffset.x > 180){
-            if (alpha < 0){
-                initialOffset.x += alpha/10
-            }
-        }
-        if (initialOffset.y < -90){
-            if (beta > 0){
-                initialOffset.y += beta/10
-            }
-        }
-        if (initialOffset.y > 90){
-            if (beta < 0){
-                initialOffset.y += beta/10
-            }
-        }
         document.querySelectorAll(elements).forEach(item=>{
             gsap.to(item,{
                 translateX: initialOffset.y/(item.dataset.speed*2),
