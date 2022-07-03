@@ -3,20 +3,24 @@ import './sidebar.css'
 import {gsap} from "gsap";
 import {SidebarList} from "./SidebarList";
 import CustomEase from "gsap/CustomEase";
+import {accessScroll} from "../../animations/animations";
 
 
 
 export function Sidebar ({list, setMenu}) {
 
     useEffect(()=>{
+        accessScroll.deny()
         const navlinks = document.querySelectorAll('.header-navbar button');
         navlinks.forEach(item=>item.style.color = 'black')
         openSidebar()
 
         return ()=>{
+            accessScroll.grant()
             document.querySelectorAll('.header-navbar ul li button')
                 .forEach(item=>item.classList.remove('active'))
             navlinks.forEach(item=>item.style.color = 'unset')
+
                 }
     },[])
 

@@ -2,9 +2,13 @@
     --main-bg-color: #ea8823;
     --main-text-color: #000;
     --cursor-color: aqua;
+    --overflow: unset
 }
 ::-webkit-scrollbar {
     display: none;
+}
+html{
+    overflow: var(--overflow);
 }
 body{
     background-color: black;

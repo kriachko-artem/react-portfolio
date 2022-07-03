@@ -1,26 +1,32 @@
 .menu-container{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
-
+    width: 0;
+    height: 0;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.42);
+    border-radius: 50%;
 }
 .navbar-menu-mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: absolute;
-    top: 0;
-    width: 100%;
-    transform: translateY(-100%);
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateY(100%);
     background-color: #fff;
     color: black;
-    height: 60%;
-    padding: 20px;
+    height: 35%;
+    padding: 20px 20px 70px;
+    opacity: 0;
 }
 .navbar-menu-mobile__main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid black;
     margin-bottom: 20px;
 }
 .navbar-menu-mobile__description{
@@ -31,22 +37,42 @@
 }
 .navbar-menu-mobile__list{
     text-align: right;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 10px;
 }
 .navbar-menu-mobile__list li{
-    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex: auto;
+    border-radius: 20px;
+    background-color: #ebedec;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
     transition: 0.4s;
     transform-origin: right center;
 }
+.navbar-menu-mobile__list li .img-holder{
+    width: 100%;
+    height: 100%;
+}
+.navbar-menu-mobile__list li .img-holder img{
+    width: 100%;
+}
+.navbar-menu-mobile__list hr{
+    width: 1px;
+    height: auto;
+}
+.navbar-menu-mobile__list hr:last-child{
+    display: none;
+}
 .navbar-menu-mobile__list li.active{
-    transform: scale(1.2);
+    background-color: #ea8823;
 }
 .navbar-menu-mobile__list li.active:before{
     top: 0;
-
 }
 .navbar-menu-mobile .menu-list{
     display: flex;
@@ -54,7 +80,9 @@
     align-items: center;
 }
 .navbar-menu-mobile .menu-list li{
-    padding: 5px 0;
+    opacity: 0;
+    padding: 10px 0;
+    text-align: center;
 }
 .arrow-holder{
     position: relative;
@@ -68,4 +96,12 @@
 }
 .arrow-holder img.arrow-bottom{
     opacity: 0;
+}
+@media screen and (max-width: 350px){
+    .navbar-menu-mobile{
+        height: 40%;
+    }
+}
+.wrapper{
+    overflow: hidden;
 }

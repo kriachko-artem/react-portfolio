@@ -15,12 +15,10 @@
     justify-content: space-between;
     align-items: center;
 }
-.header-navbar ul{
+.header-navbar .navlinks{
     position: relative;
     z-index: 11;
     display: flex;
-}
-.header-navbar .navlinks{
 }
 .header-navbar .navlinks li{
     padding: 20px 0;

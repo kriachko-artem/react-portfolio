@@ -16,11 +16,6 @@ export function Navbar () {
     const [menu, setMenu] = useState(null);
     const [isMenuOpened,setIsMenuOpened] = useState(false);
 
-    useEffect(()=>{
-        if (menu){
-            document.querySelector('html').style.overflow = 'hidden'
-        } else {document.querySelector('html').style.overflow = 'unset'}
-    },[menu])
 
     useEffect(()=>{
         setBigCursor('.header-navbar button')

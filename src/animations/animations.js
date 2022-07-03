@@ -3,11 +3,17 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 import {Back} from "gsap/gsap-core";
 
 
+export const accessScroll= {
+    grant:()=> document.documentElement.style
+        .setProperty('--overflow', 'unset'),
+    deny:()=>document.documentElement.style
+        .setProperty('--overflow', 'hidden'),
+}
+
 export function animateList(items){
     gsap.fromTo(items,{
             translateY: 20,
             opacity: 0,
-
         },
         {
             translateY: 0,
