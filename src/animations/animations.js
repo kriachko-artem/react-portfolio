@@ -23,6 +23,7 @@ export function animateList(items){
         }
     )
 }
+
 export const burgerAnimation = {
     open: ()=>{
             gsap.to('.burger .side',{
@@ -95,6 +96,7 @@ export function changeBackground(){
         }
     }
 }
+
 export function showElementsByScroll(elements){
     function move(item){
         if(window.pageYOffset > item.offsetTop*1.2 - window.innerHeight){
@@ -116,6 +118,7 @@ export function animateBody(){
             ease: 'power4.in',
         });
 }
+
 export function setCursorPosition(){
     window.addEventListener('mousemove',(event)=>{
         const pos = {
@@ -162,6 +165,7 @@ export function setBigCursor(elements){
         )
     })
 }
+
 export function deviceOrientation3D(element){
     const initialOffset = {
         x: 0,
@@ -179,6 +183,7 @@ export function deviceOrientation3D(element){
         }
     })
 }
+
 export function mouseMoveCard3D(elements){
     const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
     if (!devices.test(navigator.userAgent)){
@@ -235,6 +240,7 @@ export function animateBackgroundCircles(circles){
                 })
         })
 }
+
 export function moveCircleByRotation(elements){
     const initialOffset = {
         x: 0,
@@ -243,15 +249,41 @@ export function moveCircleByRotation(elements){
     window.addEventListener('devicemotion',({rotationRate: {alpha, beta, gamma}})=>{
         initialOffset.x += Math.round(alpha/10);
         initialOffset.y += Math.round(beta/10)
-        if ((initialOffset.x > -180 && initialOffset.x < 180)&&
-            (initialOffset.y > -90 && initialOffset.y < 90)){
-            document.querySelectorAll(elements).forEach(item=>{
-                gsap.to(item,{
-                    translateX: initialOffset.y/(item.dataset.speed*2),
-                    translateY: initialOffset.x/(item.dataset.speed*2),
-                })
-            })
+        if (initialOffset.x < -180){
+            if (alpha > 0){
+                initialOffset.x += alpha/10
+            }
         }
+        if (initialOffset.x > 180){
+            if (alpha < 0){
+                initialOffset.x += alpha/10
+            }
+        }
+        if (initialOffset.y < -90){
+            if (beta > 0){
+                initialOffset.y += beta/10
+            }
+        }
+        if (initialOffset.y > 90){
+            if (beta < 0){
+                initialOffset.y += beta/10
+            }
+        }
+        document.querySelectorAll(elements).forEach(item=>{
+            gsap.to(item,{
+                translateX: initialOffset.y/(item.dataset.speed*2),
+                translateY: initialOffset.x/(item.dataset.speed*2),
+            })
+        })
+        // if ((initialOffset.x > -180 && initialOffset.x < 180)&&
+        //     (initialOffset.y > -90 && initialOffset.y < 90)){
+        //     document.querySelectorAll(elements).forEach(item=>{
+        //         gsap.to(item,{
+        //             translateX: initialOffset.y/(item.dataset.speed*2),
+        //             translateY: initialOffset.x/(item.dataset.speed*2),
+        //         })
+        //     })
+        // }
     })
 }
 
