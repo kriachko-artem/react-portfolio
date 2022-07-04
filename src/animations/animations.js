@@ -173,9 +173,11 @@ export const deviceOrientation3D = {
         y: 0,
     },
     start: (element)=>{
+        console.log('top',this)
         if ((this.initialOffset.x === 0)&&(this.initialOffset.y === 0)){
             window.addEventListener('devicemotion',(
                 {rotationRate: {alpha, beta, gamma}})=>{
+                console.log('event',this)
                 this.initialOffset.x += Math.round(alpha/10);
                 this.initialOffset.y += Math.round(beta/10)
                 if ((this.initialOffset.x > -180 && this.initialOffset.x < 180)&&
