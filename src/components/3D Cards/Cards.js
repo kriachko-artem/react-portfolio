@@ -32,7 +32,7 @@ export function Cards () {
                                   <button onClick={()=>{
                                       start3D('.card_img-holder')
                                       setIs3DStarted(true)
-                                  }} className={'get-access'}>{is3DStarted?'Start 3D':'Restart 3D'}</button>
+                                  }} className={'get-access'}>{!is3DStarted?'Start 3D':'Restart 3D'}</button>
                               </>
                           ):(
                               <>
