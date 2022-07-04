@@ -166,23 +166,42 @@ export function setBigCursor(elements){
     })
 }
 
-export function deviceOrientation3D(element){
-    const initialOffset = {
+
+export const deviceOrientation3D = {
+    initialOffset: {
         x: 0,
         y: 0,
-    };
-    window.addEventListener('devicemotion',({rotationRate: {alpha, beta, gamma}})=>{
-        initialOffset.x += Math.round(alpha/10);
-        initialOffset.y += Math.round(beta/10)
-        if ((initialOffset.x > -180 && initialOffset.x < 180)&&
-            (initialOffset.y > -90 && initialOffset.y < 90)){
-            gsap.to(element,{
-                transform: `rotateY(${initialOffset.y/5}deg) rotateX(${-initialOffset.x/5}deg)`,
-                duration: 1,
-            });
-        }
-    })
+    },
+    start: (element)=>{
+        if ((this.initialOffset.x === 0)&&(this.initialOffset.y === 0)){
+            window.addEventListener('devicemotion',(
+                {rotationRate: {alpha, beta, gamma}})=>{
+                this.initialOffset.x += Math.round(alpha/10);
+                this.initialOffset.y += Math.round(beta/10)
+                if ((this.initialOffset.x > -180 && this.initialOffset.x < 180)&&
+                    (this.initialOffset.y > -90 && this.initialOffset.y < 90)){
+                    gsap.to(element,{
+                        transform: `rotateY(${deviceOrientation3D.initialOffset.y/5}deg) rotateX(${-deviceOrientation3D.initialOffset.x/5}deg)`,
+                        duration: 1,
+                    });
+                }
+            })
+        } else {this.initialOffset.x = 0;this.initialOffset.y = 0}
+    }
+
 }
+// (element)=>{window.addEventListener('devicemotion',(
+//         {rotationRate: {alpha, beta, gamma}})=>{
+//         this.initialOffset.x += Math.round(alpha/10);
+//         this.initialOffset.y += Math.round(beta/10)
+//         if ((this.initialOffset.x > -180 && this.initialOffset.x < 180)&&
+//             (this.initialOffset.y > -90 && this.initialOffset.y < 90)){
+//             gsap.to(element,{
+//                 transform: `rotateY(${deviceOrientation3D.initialOffset.y/5}deg) rotateX(${-deviceOrientation3D.initialOffset.x/5}deg)`,
+//                 duration: 1,
+//             });
+//         }
+//     })}
 
 export function mouseMoveCard3D(elements){
     const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
