@@ -1,11 +1,10 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import './cards.css'
 import firstCardImg from './images/first.png'
 import secondCardImg from './images/second.png'
 import thirdCardImg from './images/third.png'
 
-import {deviceOrientation3D, setBigCursor} from "../../animations/animations";
-import {mouseMoveCard3D} from "../../animations/animations";
+import {start3D, setBigCursor,mouseMoveCard3D} from "../../animations/animations";
 
 const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i");
 const isMobile = devices.test(navigator.userAgent);
@@ -17,6 +16,7 @@ export function Cards () {
         }
 
     },[])
+    const [is3DStarted,setIs3DStarted] = useState(false);
 
   return (
       <section className={'cards'}>
@@ -30,8 +30,9 @@ export function Cards () {
                               <>
                                   <h4 className={'description-rotate'}>You can rotate your phone to see the my custom 3D effect to card</h4>
                                   <button onClick={()=>{
-                                      deviceOrientation3D.start.bind(deviceOrientation3D)('.card_img-holder')
-                                  }} className={'get-access'}>Start 3D</button>
+                                      start3D('.card_img-holder')
+                                      setIs3DStarted(false)
+                                  }} className={'get-access'}>{is3DStarted?'Start 3D':'Restart 3D'}</button>
                               </>
                           ):(
                               <>

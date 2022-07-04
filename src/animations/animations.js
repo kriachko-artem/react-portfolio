@@ -173,7 +173,6 @@ export const deviceOrientation3D = {
         y: 0,
     },
     start: function (element){
-        console.log(this)
         if ((this.initialOffset.x === 0)&&(this.initialOffset.y === 0)){
             window.addEventListener('devicemotion',(
                 {rotationRate: {alpha, beta, gamma}})=>{
@@ -190,7 +189,9 @@ export const deviceOrientation3D = {
             })
         } else {this.initialOffset.x = 0;this.initialOffset.y = 0}
     }
-
+}
+export function start3D(element){
+    deviceOrientation3D.start.bind(deviceOrientation3D)(element)
 }
 // (element)=>{window.addEventListener('devicemotion',(
 //         {rotationRate: {alpha, beta, gamma}})=>{
