@@ -31,7 +31,7 @@ export function Cards () {
                                   <h4 className={'description-rotate'}>You can rotate your phone to see the my custom 3D effect to card</h4>
                                   <button onClick={()=>{
                                       start3D('.card_img-holder')
-                                      setIs3DStarted(false)
+                                      setIs3DStarted(true)
                                   }} className={'get-access'}>{is3DStarted?'Start 3D':'Restart 3D'}</button>
                               </>
                           ):(
