@@ -172,7 +172,7 @@ export const deviceOrientation3D = {
         x: 0,
         y: 0,
     },
-    start: (element)=>{
+    start: function (element){
         console.log('top',this)
         if ((this.initialOffset.x === 0)&&(this.initialOffset.y === 0)){
             window.addEventListener('devicemotion',(
@@ -189,7 +189,7 @@ export const deviceOrientation3D = {
                 }
             })
         } else {this.initialOffset.x = 0;this.initialOffset.y = 0}
-    }
+    }.bind(this)
 
 }
 // (element)=>{window.addEventListener('devicemotion',(
