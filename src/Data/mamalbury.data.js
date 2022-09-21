@@ -46,6 +46,8 @@ export const sidebarData = [
             'Webpack',
             'Bootstrap',
             'GitHub',
+            'SQL',
+            'Python',
         ]
     }
 ];

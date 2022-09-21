@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import './footer.css'
 import certificate from './images/68668357_en.png'
-import qrCode from './images/frame.png'
+import qrCode from './images/qrcode.png'
 import CV from './images/CV KRIACHKO ARTEM React Frontend developer.pdf'
 import downloadIco from './images/211720_download_cloud_icon.png'
 import {setBigCursor} from "../../animations/animations";
