@@ -104,13 +104,12 @@ export function Poster () {
               <div className="poster__author-info">
                   <span className={'name'}>Hello!</span>
                   <span>I'm Frontend developer with experience of</span>
-                  <span>developing professional HTML</span>
-                  <span>Responsive Landing pages and Custom Websites.</span>
+                  <span>developing professional React App,</span>
+                  <span> HTML Responsive Landing pages and Custom Websites.</span>
                   <span>I'm looking for a long-term relationship with the employer.</span>
               </div>
               </div>
           </section>
-
 
   )
 }

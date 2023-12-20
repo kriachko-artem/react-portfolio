@@ -51,7 +51,7 @@ export function Footer () {
                   </div>:null}
           </div>
           <div className="CV">
-              <a href={CV}><img src={downloadIco} alt="Download"/></a>
+              <a href={CV} target="_blank"><img src={downloadIco} alt="Download"/></a>
               <h4>Download my CV</h4>
           </div>
       </section>

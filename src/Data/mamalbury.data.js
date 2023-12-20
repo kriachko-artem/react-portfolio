@@ -10,8 +10,10 @@ export const sidebarData = [
         icon: education,
         list: [
             'Hillel IT School - Front-End Pro',
+            'Hillel IT School - Python Pro',
             'Source It School - Markup Developer',
             'Yaroslav Mudryi NLU - Magister degree',
+            'NTU «Kharkiv Polytechnic Institute» - Computer Science',
         ]
     },
     {
@@ -19,6 +21,7 @@ export const sidebarData = [
         navLink: "Work experience",
         icon: experience,
         list: [
+            'SkyService - Front-End Developer (six month)',
             'NaNutru - Front-End Developer (five month)',
             'Shark Farm - Front-End Developer (eight month)',
             'Freelance UpWork - Markup Developer (one year)',
@@ -48,6 +51,7 @@ export const sidebarData = [
             'GitHub',
             'SQL',
             'Python',
+            'C++',
         ]
     }
 ];

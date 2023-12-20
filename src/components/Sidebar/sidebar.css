@@ -33,20 +33,10 @@
     align-items: flex-start;
     width: 85%;
 }
-
-.sidebar__list .sidebar__list__list:hover li{
-    color: #c1c1c1;
-}
 .sidebar__list .sidebar__list__list li{
     padding: 5px 0;
     opacity: 0;
     background-color: unset;
-}
-.sidebar__list .sidebar__list__list li:hover{
-    color: var(--main-text-color)
-}
-.sidebar__list .sidebar__list__list li:hover img{
-    opacity: 1;
 }
 .sidebar ul{
     display: flex;
